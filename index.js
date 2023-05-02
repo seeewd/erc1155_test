@@ -13,15 +13,28 @@ async function initWeb3() {
 
 initWeb3()
 
-async function mintDynamicNFT(emotion) {
+async function updateTokenURI() {
+  const tokenIdInput = document.getElementById('tokenId')
+  const tokenId = parseInt(tokenIdInput.value)
+  const emotionInput = document.getElementById('emotion')
+  const emotion = emotionInput.value
+
+  if (tokenId && emotion) {
+    await updateDynamicNFT(tokenId, emotion)
+    alert('Token URI updated successfully!')
+  } else {
+    alert('Please enter a token ID and an emotion.')
+  }
+}
+
+async function updateDynamicNFT(tokenId, emotion) {
   const web3 = window.web3
   const accounts = await web3.eth.getAccounts()
   const contract = new web3.eth.Contract(DynamicNFT_ABI, DynamicNFT_address)
 
-  const tokenId = generateTokenId() // A function to generate a unique token ID
   const tokenURI = `https://example.com/api/token/${emotion}/${tokenId}`
 
   await contract.methods
-    .mint(accounts[0], tokenId, 1, tokenURI)
+    .updateTokenURI(tokenId, tokenURI)
     .send({ from: accounts[0] })
 }
