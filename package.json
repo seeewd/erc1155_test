@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.3"
-  }
+    "@openzeppelin/contracts": "^4.8.3",
+    "web3": "^1.9.0"
+  },
+  "name": "erc1155_test",
+  "description": "For dNFT testing. Truffle v5.8.4 (core: 5.8.4) Ganache v7.8.0 Solidity v0.5.16 (solc-js) Node v18.4.0 Web3.js v1.8.2",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeewd/erc1155_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seeewd/erc1155_test/issues"
+  },
+  "homepage": "https://github.com/seeewd/erc1155_test#readme"
 }
